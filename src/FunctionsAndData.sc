@@ -18,7 +18,7 @@ class Rational(x: Int, y: Int) {
     )
   }
 
-  def - (that: Rational) = this.+ (that.neg)
+  def - (that: Rational) = this + -that
 
   def * (that: Rational) = {
     new Rational(
@@ -32,7 +32,7 @@ class Rational(x: Int, y: Int) {
     )
   }
 
-  def neg: Rational = {
+  def unary_- : Rational = {
     new Rational(-numer, denom)
   }
 
@@ -50,5 +50,5 @@ class Rational(x: Int, y: Int) {
 // Tests
 val x = new Rational(1, 3)
 val y = new Rational(1, 3)
-
 x * y
+x * x - y * y
