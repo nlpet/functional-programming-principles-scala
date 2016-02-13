@@ -1,5 +1,4 @@
 
-
 class Rational(x: Int, y: Int) {
 
   require(y != 0, "denominator cannot be zero")
@@ -8,6 +7,8 @@ class Rational(x: Int, y: Int) {
   private val g = gcd(x, y)
   def numer = x / g
   def denom = y / g
+
+  def this(x: Int) = this(x, 1)
 
   def add(that: Rational) = {
 
@@ -55,6 +56,7 @@ val r2 = new Rational(1, 10)
 //r1.subtract(r2)
 val x = new Rational(1, 3)
 val y = new Rational(5, 7)
+
 //val z = new Rational(3, 2)
 //x.subtract(y).subtract(z)
 //
