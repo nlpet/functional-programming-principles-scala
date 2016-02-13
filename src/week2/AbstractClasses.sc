@@ -32,9 +32,13 @@ class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet {
   }
 }
 
+//
+//val t = new NonEmpty(17, new Empty, new Empty)
+//val t2 = t incl 4
+//val t3 = new NonEmpty(1, new Empty, new Empty)
+//
+//t2 union t3
 
-val t = new NonEmpty(17, new Empty, new Empty)
-val t2 = t incl 4
-val t3 = new NonEmpty(1, new Empty, new Empty)
+val t = new NonEmpty(1, new Empty, new Empty)
 
-t2 union t3
+t incl 2

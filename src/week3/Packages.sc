@@ -1,4 +1,2 @@
-import week3.Rational
 
-
-new Rational(1, 2)
+// new week3.Rational(1, 2)

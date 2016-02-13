@@ -40,6 +40,8 @@ class Rational(x: Int, y: Int) {
 
   def max(that: Rational) = if (this < that) that else this
 
+  def min(that: Rational) = if (this < that) this else that
+
   override def toString = {
     if (numer == denom) "1"
     else if (numer == 0 || denom == 0) "0"
@@ -48,7 +50,7 @@ class Rational(x: Int, y: Int) {
 }
 
 // Tests
-val x = new Rational(1, 3)
-val y = new Rational(1, 3)
-x * y
-x * x - y * y
+val n = new Rational(6, 8)
+val m = new Rational(2, 3)
+println("Max of n and m is " + (n max m))
+println("Min of n and m is " + (n min m))
