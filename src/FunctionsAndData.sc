@@ -8,9 +8,9 @@ class Rational(x: Int, y: Int) {
   def numer = x / g
   def denom = y / g
 
-  def this(x: Int) = this(x, 1)
+  //def this(x: Int) = this(x, 1)
 
-  def add(that: Rational) = {
+  def + (that: Rational) = {
 
     new Rational(
       numer * that.denom + that.numer * denom,
@@ -18,15 +18,15 @@ class Rational(x: Int, y: Int) {
     )
   }
 
-  def subtract(that: Rational) = add(that.neg)
+  def - (that: Rational) = this.+ (that.neg)
 
-  def multiply(that: Rational) = {
+  def * (that: Rational) = {
     new Rational(
       numer * that.numer, denom * that.denom
     )
   }
 
-  def divide(that: Rational) = {
+  def / (that: Rational) = {
     new Rational(
       numer * that.denom, denom * that.numer
     )
@@ -36,31 +36,19 @@ class Rational(x: Int, y: Int) {
     new Rational(-numer, denom)
   }
 
-  def less(that: Rational) = numer * that.denom < that.numer * denom
+  def < (that: Rational) = numer * that.denom < that.numer * denom
 
-  def max(that: Rational) = if (this.less(that)) that else this
+  def max(that: Rational) = if (this < that) that else this
 
   override def toString = {
     if (numer == denom) "1"
+    else if (numer == 0 || denom == 0) "0"
     else s"$numer/$denom"
   }
 }
 
-val r1 = new Rational(1, 2)
-val r2 = new Rational(1, 10)
-//r1.add(r2)
-//r1.multiply(r2)
-//r1.neg
-//r2.neg
-//r1.divide(r2)
-//r1.subtract(r2)
+// Tests
 val x = new Rational(1, 3)
-val y = new Rational(5, 7)
+val y = new Rational(1, 3)
 
-//val z = new Rational(3, 2)
-//x.subtract(y).subtract(z)
-//
-//val a = new Rational(70, 49)
-x.less(y)
-x.max(y)
-
+x * y
