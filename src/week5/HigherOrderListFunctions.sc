@@ -14,7 +14,6 @@ squareListMap(List(1,2,3))
 
 val data = List("a", "a", "a", "b", "c", "c", "a")
 
-nums span (x => x > 0)
 
 def pack[T](xs: List[T]): List[List[T]] = xs match {
   case Nil => Nil
@@ -29,3 +28,5 @@ def encode[T](xs: List[T]): List[(T, Int)] =
 encode(data)
 
 pack(data)
+
+
