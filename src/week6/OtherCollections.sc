@@ -40,3 +40,14 @@ def isPrime(n : Int): Boolean = {
 
 
 def isPrimeC(n: Int): Boolean = (2 until n) forall (d => n % d != 0)
+
+
+val l = (1 to 10).toList
+
+l filter (x => isPrime(x))
+
+val ss = Set(1, 2, 3, 4, 5)
+
+ss contains 1
+
+ss map (_ / 2)
