@@ -18,8 +18,14 @@ def queens(n : Int): Set[List[Int]] = {
     }
   }
 
+
   placeQueens(n)
 }
+def show(queens: List[Int]) = {
+  val lines =
+    for (col <- queens.reverse)
+      yield Vector.fill(queens.length)("* ").updated(col, "X ").mkString
+  "\n" + (lines mkString "\n")
 
-
-queens(4)
+}
+queens(5) map show mkString "\n"
