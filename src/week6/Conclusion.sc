@@ -12,7 +12,6 @@ val mnem = Map(
 /** Invert the mnem map to give a map from chars */
 val charCode: Map[Char, Char] =
   for ((digit, str) <- mnem; ltr <- str) yield ltr -> digit
-
 /** Maps a word to the digit string it can represent, e.g. 'Java' -> '5282' */
 def wordCode(word: String): String =
   word.toUpperCase() map charCode
@@ -40,4 +39,6 @@ def encode(number: String): Set[List[String]] =
   }.toSet
 
 
-encode("7225247386")
+// encode("7225247386")
+
+encode("52673")
