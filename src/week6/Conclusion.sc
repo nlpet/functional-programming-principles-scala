@@ -39,6 +39,11 @@ def encode(number: String): Set[List[String]] =
   }.toSet
 
 
+def translate(number: String): Set[String] =
+  encode(number) map (_ mkString " ")
+
 // encode("7225247386")
 
-encode("52673")
+// encode("52673")
+
+translate("7225247386")
